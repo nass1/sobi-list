@@ -17,7 +17,7 @@ class IndexView(TemplateView):
 
 class AboutCreate(CreateView):
     model = About
-    success_url = '/biz/'
+    success_url = '/'
     fields = '__all__'
 
 

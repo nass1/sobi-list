@@ -1,10 +1,24 @@
 {% extends "base.html" %}
+{% load bootstrap3 %}
 {% block body_block %}
 
 <p></p>
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
+<h1>Add Your business to Sobi List</h1>
+<p>Please fill up form</p>
+
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    {% bootstrap_form form layout="inline" %}
+    </div>
+    <p></p>
+    {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
 </form>
+<!--- http://django-bootstrap3.readthedocs.io/en/latest/templatetags.html#bootstrap-form --->
+
+
+
 
 {% endblock %}

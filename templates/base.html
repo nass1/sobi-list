@@ -17,11 +17,19 @@
 <body>
 <div class="container">
    <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="{% url 'bizweb:mainpage' %}">Home</a></li>
+  <li role="presentation" ><a href="{% url 'bizweb:mainpage' %}">Home</a></li>
   <li role="presentation"><a href="{% url 'bizweb:bizlist' %}">Show All</a></li>
-  <li role="presentation"><a href="{% url 'bizweb:create' %}">Add Your business with Us</a></li>
+  <li role="presentation"><a href="{% url 'bizweb:create' %}">Add Your business To Sobi List</a></li>
 </ul>
     </div>
+<br>
+<div class="panel panel-primary">
+      <div class="panel-heading"></div>
+    <div class="panel-heading"></div>
+
+    </div>
+
+
 <div class="container">
     {% block body_block %}
     <!--- Anythin outside of this will be inhertied if you extend--->
