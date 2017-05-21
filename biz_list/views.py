@@ -6,9 +6,14 @@ from django.views.generic import (View,TemplateView,
                                 CreateView,DeleteView,
                                 UpdateView)
 
-class AboutView(TemplateView):
-    template_name = "about.html"
 
+
+class IndexView(TemplateView):
+    template_name = "index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['biznames'] = About.objects.all()[:5]
+        return context
 
 class AboutCreate(CreateView):
     model = About
@@ -19,7 +24,7 @@ class AboutCreate(CreateView):
 class AboutListView(ListView):
     context_object_name = "biznames"
     model = About
-
+    #about_list.html
 
 
 
