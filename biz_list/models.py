@@ -30,7 +30,7 @@ class About(models.Model):
     phone = models.IntegerField()
     address = models.CharField(max_length=900)
     country = CountryField(blank_label='(select country)')
-    profile_pic = models.ImageField(upload_to='images', blank=True)
+    profile_pic = models.ImageField(upload_to='images', blank=True, default="/mnt/project/media/images/barcelona.jpg")
     #https://pypi.python.org/pypi/django-countries
 
 
