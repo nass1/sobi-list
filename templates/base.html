@@ -30,11 +30,18 @@
     </div>
 
 
+
+
+{% block body_background %}
+    <!--- Anythin outside of this will be inhertied if you extend--->
+	{% endblock %}
+
 <div class="container">
     {% block body_block %}
     <!--- Anythin outside of this will be inhertied if you extend--->
 	{% endblock %}
         </div>
+
 
 
 </body>
