@@ -5,36 +5,43 @@
 <link href="{% static 'css/listting.css' %}" type="text/css" rel="stylesheet" media="all">
 
 
-     <div class="container">
-		<div class="row">
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-                {% for i in biznames%}
-				<ul class="event-list">
+    <div class="container">
+    <div class="row">
+        {% for i in biznames%}
 
-					<li>
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <h2>
+							{% for key, value in biz_cat.items %}
+                            {{key}}
+							{% endfor %}
+                        </h2>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="list-group-item-heading"> List group heading </h4>
+                    <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id, nam quot populo ea.
+                        Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem iudicabit cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                    </p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h2> 13540 <small> votes </small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
+                    <div class="stars">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <p> Average 4.1 <small> / </small> 5 </p>
+                </div>
 
-						<div class="info">
-							<h2 class="title1">{{i.name}} <span style="color:blue;font-weight:bold">({{i.country.name}})</span></h2>
-							<p class="desc" id="description" style="margin:0px;">{{i.description}}</p>
-							<ul>
-								<li style="width:50%;"><a href="{{i.website}}"><span class="fa fa-globe"></span> Website</a></li>
-								<li style="width:50%;"><a href="https://www.google.com.au/maps/place/{{i.address}} {{i.country.name}}" target="_blank"><span class="fa fa-address-card-o"></span> Address</a></li>
-							</ul>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-							</ul>
-						</div>
-					</li>
+        {% endfor %}
+        </div>
 
-				</ul>
-                {% endfor %}
-			</div>
-		</div>
-	</div>
+
+</div>
 
 
 

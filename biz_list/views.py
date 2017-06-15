@@ -1,3 +1,4 @@
+from django.template.defaulttags import register
 from django.shortcuts import render
 from . forms import AboutForm
 from . models import About
@@ -19,6 +20,10 @@ class AboutCreate(CreateView):
     model = About
     success_url = '/'
     fields = '__all__'
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
 
 
 class AboutListView(ListView):
