@@ -21,15 +21,14 @@ class AboutCreate(CreateView):
     success_url = '/'
     fields = '__all__'
 
-@register.filter
-def get_item(dictionary, key):
-    return dictionary.get(key)
+
 
 
 class AboutListView(ListView):
     context_object_name = "biznames"
     model = About
     #about_list.html
+
 
 
 
