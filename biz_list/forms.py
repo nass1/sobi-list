@@ -9,5 +9,6 @@ class AboutForm(ModelForm):
     fields = '__all__'
     widgets = {
             'description': Textarea(attrs={'cols': 80, 'rows': 20}),
+        #next it to check widgets
         }
 

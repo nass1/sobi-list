@@ -28,7 +28,7 @@ SECRET_KEY = '3%mj=xv72)c85g0v(3=52!ub__b#p6q(3vs3rv@%sg%(825-gg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['idex6z3c.apps.lair.io']
+ALLOWED_HOSTS = ['pr6t0926.apps.lair.io']
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Application definition

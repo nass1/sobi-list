@@ -3,11 +3,11 @@
 
 {% block body_block %}
 <link href="{% static 'css/listting.css' %}" type="text/css" rel="stylesheet" media="all">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             {% for i in biznames%}
             <div class="well well-sm">
                 <div class="row">
@@ -17,18 +17,20 @@
                     </div>
                     <div class="col-xs-9 col-md-9 section-box">
                         <h2>
-                            {{i.name}} <a href="{{i.website}}" target="_blank"><span class="glyphicon glyphicon-new-window">
-                            </span></a>
+                            {{i.name}} <a href="{{i.id}}" target="_blank">(View)</a>
                         </h2>
                         <p>
                             {{i.description}}</p>
                         <hr />
                         <div class="row rating-desc">
                             <div class="col-md-12">
-                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span>(36)<span class="separator">|</span>
-                                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
+
+                            <a href="{{i.social}}" target="_blank"> <span class="fa fa-facebook-official" style="font-size:24px"></span>(FaceBook)</a><span class="separator">|</span>
+
+							<a href="{{i.webiste}}" target="_blank"> <span class="fa fa-globe" style="font-size:24px"></span> Website </a><span class="separator">|</span>
+                                <span class="glyphicon glyphicon-phone-alt"></span>{{i.phone}}<span class="separator">|</span>
+                                <span class="glyphicon glyphicon-phone-alt"></span>{{i.phone}}<span class="separator">|</span><span class="separator">|</span>
+                                <span class="fa fa-industry"></span> category: {{i.category}}<span class="separator">|</span>
                             </div>
                         </div>
                     </div>

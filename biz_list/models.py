@@ -15,28 +15,33 @@ class About(models.Model):
         ("Restaurants", 'Restaurants'),
         ("Retail_Shopping" , 'Retail Shopping'),
         ("Sports_Recreation", 'Sports Recreation'),
-        ("Trades", 'Trades'),
+        ("Trades_Services", 'Trades & Services'),
         ("Other", 'Other'),
     )
 
-    name = models.CharField(max_length=300)
+    name = models.CharField(max_length=200)
     category = models.CharField(
         max_length=100,
         choices=biz_cat,
         default=Automotive,
     )
+    brief_description = models.CharField(max_length=300)
     description = models.TextField()
     email = models.EmailField(max_length=300)
     phone = models.IntegerField()
     address = models.CharField(max_length=900)
     country = CountryField(blank_label='(select country)')
     website = models.URLField(max_length=200, blank=True)
-    social = models.URLField(max_length=200, blank=True)
+    facebook = models.URLField(max_length=200, blank=True)
+    pin = models.URLField(max_length=200, blank=True)
+    snapchat = models.URLField(max_length=200, blank=True)
+    instagram = models.URLField(max_length=200, blank=True)
+    twitter = models.URLField(max_length=200, blank=True)
+    youtube = models.URLField(max_length=200, blank=True)
+    google_plus = models.URLField(max_length=200, blank=True)
+
     #profile_pic = models.ImageField(upload_to='images', blank=True, default="/mnt/project/media/images/barcelona.jpg")
     #https://pypi.python.org/pypi/django-countries
-
-
-
 
     def __str__(self):              # __unicode__ on Python 2
         return self.name
