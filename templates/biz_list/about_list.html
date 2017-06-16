@@ -5,41 +5,41 @@
 <link href="{% static 'css/listting.css' %}" type="text/css" rel="stylesheet" media="all">
 
 
-    <div class="container">
+<div class="container">
     <div class="row">
-        {% for i in biznames%}
+        <div class="col-md-6">
+            {% for i in biznames%}
+            <div class="well well-sm">
+                <div class="row">
 
-                <div class="media col-md-3">
-                    <figure class="pull-left">
-                        <h2>
-
-						{{i.category}}
-
-                        </h2>
-                    </figure>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> {{i.name}} </h4>
-                    <p class="list-group-item-text"> {{i.description}}
-                    </p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <h2> <small> {{i.country.name}} </small></h2>
-                    <a href="{{i.website}}" target="_blank"><button type="button" class="btn btn-primary btn-lg btn-block" >Visit Website</button></a>
-                    <div class="stars">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
+                    <div class="col-xs-3 col-md-3 text-center">
+                        {{i.country.name}}
                     </div>
-                    <p> Average 4.1 <small> / </small> 5 </p>
+                    <div class="col-xs-9 col-md-9 section-box">
+                        <h2>
+                            {{i.name}} <a href="{{i.website}}" target="_blank"><span class="glyphicon glyphicon-new-window">
+                            </span></a>
+                        </h2>
+                        <p>
+                            {{i.description}}</p>
+                        <hr />
+                        <div class="row rating-desc">
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                                </span><span class="glyphicon glyphicon-heart"></span>(36)<span class="separator">|</span>
+                                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-<h1>____________________________________________________________________________________________</h1>
-        {% endfor %}
+
+            </div>
+            {% endfor %}
         </div>
 
-
+    </div>
 </div>
 
 

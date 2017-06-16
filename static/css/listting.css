@@ -1,10 +1,8 @@
-a.list-group-item {
-    height:auto;
-    min-height:220px;
-}
-a.list-group-item.active small {
-    color:#fff;
-}
-.stars {
-    margin:20px auto 1px;
-}
+body{ margin-top:20px;}
+.glyphicon { margin-right:5px;}
+.section-box h2 { margin-top:0px;}
+.section-box h2 a { font-size:50px; }
+.glyphicon-heart { color:#e74c3c;}
+.glyphicon-comment { color:#27ae60;}
+.separator { padding-right:5px;padding-left:5px; }
+.section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
