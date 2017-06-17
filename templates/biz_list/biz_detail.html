@@ -1,12 +1,55 @@
 {% extends "base.html" %}
-{% block body_block %}
-        <p>{{biz_details.name}}</p>
-		<p>{{biz_details.description}}</p>
-		<p>{{biz_details.email}}</p>
-		<p>{{biz_details.phone}}</p>
-		<p>{{biz_details.address}}</p>
-		<p>{{biz_details.country}}</p>
-		<p></p>
 {% load staticfiles %}
-<img src="{{ biz_details.profile_pic.url }}" height="250" width="250" alt="this customer didn't upload a picture"/>
+{% block body_block %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="{% static 'css/detail.css' %}" type="text/css" rel="stylesheet" media="all">
+
+ <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body text-left">
+                                <div class="row">
+                                    <div class="col-md-12 ">
+                                        <center>
+                                            {{biz_details.country.name}} ({{biz_details.category}})
+
+                                        </center>
+                                    </div>
+                                    <div class="col-md-12">
+
+                                        <h2>{{biz_details.name}}</h2>
+                                        <p>{{biz_details.description}}</p>
+                                        <p>
+                                            <a href="#" class="remove-decoration"><i class="glyphicon glyphicon-envelope"></i> {{biz_details.email}}</a> <br>
+                                            <a href="http://sachitha-seram.branded.me/" target="_blank" class="remove-decoration"><i class="glyphicon glyphicon-globe"></i> {{biz_details.website}} </a><br>
+                                            <a href="#" class="remove-decoration"> <i class="glyphicon glyphicon-phone"></i> {{biz_details.phone}}</a> <br>
+                                            <a href="#" class="remove-decoration"> <i class="fa fa-map-marker"></i> {{biz_details.address}}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="IdFooter" class="panel-footer text-right">
+
+                                <ul class="social-network social-circle">
+                                    <li><a href="{{biz_details.facebook}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{{biz_details.pinterest}}" class="pinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="{{biz_details.twitter}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{{biz_details.google_plus}}" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="{{biz_details.snapchat}}" class="icoSnapchat" title="Snap Chat"><i class="fa fa-snapchat-ghost"></i></a></li>
+                                    <li><a href="{{biz_details.youtube}}" class="icoGoogle" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4"></div>
+                </div>
+        </div>
+    </div>
+
+
 {% endblock %}

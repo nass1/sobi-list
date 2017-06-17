@@ -25,15 +25,15 @@ class About(models.Model):
         choices=biz_cat,
         default=Automotive,
     )
-    brief_description = models.CharField(max_length=300)
+    brief_description = models.TextField(max_length=300)
     description = models.TextField()
-    email = models.EmailField(max_length=300)
+    email = models.EmailField(max_length=50)
     phone = models.IntegerField()
     address = models.CharField(max_length=900)
     country = CountryField(blank_label='(select country)')
     website = models.URLField(max_length=200, blank=True)
     facebook = models.URLField(max_length=200, blank=True)
-    pin = models.URLField(max_length=200, blank=True)
+    pinterest = models.URLField(max_length=200, blank=True)
     snapchat = models.URLField(max_length=200, blank=True)
     instagram = models.URLField(max_length=200, blank=True)
     twitter = models.URLField(max_length=200, blank=True)

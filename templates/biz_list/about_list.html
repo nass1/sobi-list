@@ -17,19 +17,26 @@
                     </div>
                     <div class="col-xs-9 col-md-9 section-box">
                         <h2>
-                            {{i.name}} <a href="{{i.id}}" target="_blank">(View)</a>
+                            {{i.name}} <a href="{{i.id}}" target="_blank">(View)</a><span><h4>({{i.category}})</h4></span>
                         </h2>
+
                         <p>
-                            {{i.description}}</p>
+                            {{i.brief_description}}</p>
                         <hr />
                         <div class="row rating-desc">
                             <div class="col-md-12">
 
-                            <a href="{{i.social}}" target="_blank"> <span class="fa fa-facebook-official" style="font-size:24px"></span>(FaceBook)</a><span class="separator">|</span>
+                            <a href="{{i.facebook}}" target="_blank"> <span class="fa fa-facebook-official" style="font-size:24px"></span>  Facebook</a><span class="separator">|</span>
+                                <a href="{{i.pinterest}}" target="_blank"> <span class="fa fa-pinterest-square" style="font-size:24px"></span>  Pinterest</a><span class="separator">|</span>
+                                <a href="{{i.snapchat}}" target="_blank"> <span class="fa fa-snapchat-square" style="font-size:24px"></span>  Snapchat</a><span class="separator">|</span>
+                                 <a href="{{i.instagram}}" target="_blank"> <span class="fa fa-instagram" style="font-size:24px"></span>  Instagram</a><span class="separator">|</span>
+                                <a href="{{i.twitter}}" target="_blank"> <span class="fa fa-twitter-square" style="font-size:24px"></span>  Twitter</a><span class="separator">|</span>
+                                <a href="{{i.youtube}}" target="_blank"> <span class="fa fa-youtube-square" style="font-size:24px"></span>  Youtube</a><span class="separator">|</span>
+                                <a href="{{i.google_plus}}" target="_blank"> <span class="fa fa-google-plus-square" style="font-size:24px"></span> Google Plus</a><span class="separator">|</span>
 
-							<a href="{{i.webiste}}" target="_blank"> <span class="fa fa-globe" style="font-size:24px"></span> Website </a><span class="separator">|</span>
-                                <span class="glyphicon glyphicon-phone-alt"></span>{{i.phone}}<span class="separator">|</span>
-                                <span class="glyphicon glyphicon-phone-alt"></span>{{i.phone}}<span class="separator">|</span><span class="separator">|</span>
+							<a href="{{i.webiste}}" target="_blank"> <span class="fa fa-globe" style="font-size:24px"></span> Website </a><span class="separator"> | </span>
+
+                                <span class="glyphicon glyphicon-phone-alt"></span> {{i.phone}}<span class="separator">|</span>
                                 <span class="fa fa-industry"></span> category: {{i.category}}<span class="separator">|</span>
                             </div>
                         </div>
