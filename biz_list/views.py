@@ -7,7 +7,7 @@ from django.views.generic import (View,TemplateView,
                                 CreateView,DeleteView,
                                 UpdateView)
 
-
+from django.http import HttpRequest
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -24,10 +24,17 @@ class AboutCreate(CreateView):
     success_url = '/'
     fields = '__all__'
 
+#######################################
+class SearchList(TemplateView):
+    template_name = "biz_list/search.html"
+    model = About
+    context = "list1"
+    def get_host(self):
+        app_url = HttpRequest()
+        print ("URL is ", app_url.method)
+######################### to be continued #############################
 
-class SearchList(ListView):
-    template_name = "search.html"
-
+#######################################
 
 class AboutListView(ListView):
     context_object_name = "biznames"

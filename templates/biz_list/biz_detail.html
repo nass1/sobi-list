@@ -4,7 +4,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{% static 'css/detail.css' %}" type="text/css" rel="stylesheet" media="all">
-
+<h1>
+    <p>URL of this page: {{ request.get_full_path }}</p>
+</h1>
  <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
