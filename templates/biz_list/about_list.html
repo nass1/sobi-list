@@ -13,11 +13,12 @@
                 <div class="row">
 
                     <div class="col-xs-3 col-md-3 text-center">
-                        {{i.country.name}}
+                        {{i.country.name}} - {{i.city}}  <br>
+                        ({{i.category}})
                     </div>
                     <div class="col-xs-9 col-md-9 section-box">
                         <h2>
-                            {{i.name}} <a href="{{i.id}}" target="_blank">(View)</a><span><h4>({{i.category}})</h4></span>
+                            {{i.name}} <a href="{{i.id}}" target="_blank">(View)</a><span><h4></h4></span>
                         </h2>
 
                         <p>
@@ -34,8 +35,9 @@
                                 <a href="{{i.youtube}}" target="_blank"> <span class="fa fa-youtube-square" style="font-size:24px"></span>  Youtube</a><span class="separator">|</span>
                                 <a href="{{i.google_plus}}" target="_blank"> <span class="fa fa-google-plus-square" style="font-size:24px"></span> Google Plus</a><span class="separator">|</span>
 
-							<a href="{{i.webiste}}" target="_blank"> <span class="fa fa-globe" style="font-size:24px"></span> Website </a><span class="separator"> | </span>
+							<a href="{{i.webiste}}" target="_blank"> <span class="fa fa-globe" style="font-size:24px"></span> Website </a><span class="separator">  </span><br>
 
+                                <span class="fa fa-location-arrow"></span> {{i.address}}, {{i.city}}<span class="separator">|</span>
                                 <span class="glyphicon glyphicon-phone-alt"></span> {{i.phone}}<span class="separator">|</span>
                                 <span class="fa fa-industry"></span> category: {{i.category}}<span class="separator">|</span>
                             </div>

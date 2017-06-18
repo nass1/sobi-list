@@ -30,6 +30,7 @@ class About(models.Model):
     email = models.EmailField(max_length=50)
     phone = models.IntegerField()
     address = models.CharField(max_length=900)
+    city = models.CharField(max_length=900)
     country = CountryField(blank_label='(select country)')
     website = models.URLField(max_length=200, blank=True)
     facebook = models.URLField(max_length=200, blank=True)

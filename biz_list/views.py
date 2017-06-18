@@ -16,12 +16,17 @@ class IndexView(TemplateView):
         context['biznames'] = About.objects.all()[:5]
         return context
 
+
+
+
 class AboutCreate(CreateView):
     model = About
     success_url = '/'
     fields = '__all__'
 
 
+class SearchList(ListView):
+    template_name = "search.html"
 
 
 class AboutListView(ListView):
