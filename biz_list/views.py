@@ -1,13 +1,14 @@
 from django.template.defaulttags import register
-from django.shortcuts import render
-from . forms import AboutForm
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic.detail import SingleObjectMixin
+from . forms import AboutForm, NameForm
 from . models import About
 from django.views.generic import (View,TemplateView,
                                 ListView,DetailView,
                                 CreateView,DeleteView,
                                 UpdateView)
 
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponseRedirect, HttpResponse
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -18,20 +19,36 @@ class IndexView(TemplateView):
 
 
 
-
 class AboutCreate(CreateView):
     model = About
     success_url = '/'
     fields = '__all__'
 
+
+def get_name(request, nameid):
+    # if this is a POST request we need to process the form data
+    abc = request.path
+    print ("the ree is ", abc)
+    abc = About.objects.filter(category=nameid)
+
+    return render(request, 'biz_list/about_list.html', {'biznames': abc})
+
 #######################################
-class SearchList(TemplateView):
+"""
+class SearchList(SingleObjectMixin, ListView):
     template_name = "biz_list/search.html"
     model = About
-    context = "list1"
-    def get_host(self):
-        app_url = HttpRequest()
-        print ("URL is ", app_url.method)
+    context_object_name = "biznames"
+    #queryset  = About.objects.filter(category__startswith="Restaurants")
+"""
+
+
+
+
+
+
+
+
 ######################### to be continued #############################
 
 #######################################

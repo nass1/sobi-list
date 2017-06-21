@@ -11,12 +11,12 @@ class About(models.Model):
         ("Financial_Services", 'Financial Services'),
         ("Hair_Beauty", 'Hair Beauty'),
         ("Medical", 'Medical'),
-         ("Professional_Services", 'Professional Services'),
+         ("Services", 'Services'),
         ("Restaurants", 'Restaurants'),
         ("Retail_Shopping" , 'Retail Shopping'),
         ("Sports_Recreation", 'Sports Recreation'),
-        ("Trades_Services", 'Trades & Services'),
-        ("Other", 'Other'),
+        ("Real_Estate", 'Real Estate'),
+        ("Other", 'Others'),
     )
 
     name = models.CharField(max_length=200)

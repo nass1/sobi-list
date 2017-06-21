@@ -112,13 +112,13 @@ border:1px solid #e7eaed;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.focus-image i.fa-laptop {
-	background:#ff9e29;
-}
 .focus-image i.fa-car {
-	background:#3fb7d2;
+	background:#d40b4f;
 }
-.focus-image i.fa-motorcycle {
+.focus-image i.fa-book {
+	background:#d40b4f;
+}
+.focus-image i.fa-money {
 	background:#15c01c;
 }
 .focus-image i.fa-wheelchair {
@@ -131,7 +131,7 @@ border:1px solid #e7eaed;
 	background:#c119ce;
 }
 .focus-image i.fa-asterisk {
-	background:#7fbad8;
+	background:#FFEB3B;
 }
 .focus-image i.fa-gamepad {
 	background:#1ca39d;
@@ -155,9 +155,9 @@ i.car {
 }
 .focus-layout:hover div.focus-image i.car{
 }
-i.bike {
+i.money {
 }
-.focus-layout:hover div.focus-image i.bike{
+.focus-layout:hover div.focus-image i.money{
 }
 i.furniture {
 }

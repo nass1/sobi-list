@@ -12,3 +12,5 @@ class AboutForm(ModelForm):
             'brief_description': Textarea(attrs={'cols': 50, 'rows': 5}),
         }
 
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name', max_length=100)

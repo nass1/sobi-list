@@ -1,35 +1,16 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load staticfiles %}
 
 {% block body_background %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{% static 'css/style1.css' %}" type="text/css" rel="stylesheet" media="all">
-<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-<h3>Welcome !</h3>
+
+
 <div class="content">
 			<div class="categories">
 				<div class="container">
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html" value="hi there">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-mobile"></i></div>
-									<h4 class="clrchg">Mobiles</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab2">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-laptop"></i></div>
-									<h4 class="clrchg"> Electronics & Appliances</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab3">
+						<a href="search/Automotive/" value="hi there">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-car"></i></div>
@@ -39,67 +20,57 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab4">
+						<a href="search/Education_Learning">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-motorcycle"></i></div>
-									<h4 class="clrchg">Bikes</h4>
+									<div class="focus-image"><i class="fa fa-laptop"></i></div>
+									<h4 class="clrchg"> Electronics & Appliances</h4>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab5">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-wheelchair"></i></div>
-									<h4 class="clrchg">Furnitures</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab6">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-paw"></i></div>
-									<h4 class="clrchg">Pets</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab7">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-book"></i></div>
-									<h4 class="clrchg">Education_Learning</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab8">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
-									<h4 class="clrchg">Fashion</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab9">
+						<a href="search/Entertainment">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-gamepad"></i></div>
-									<h4 class="clrchg">Kids</h4>
+									<h4 class="clrchg">Entertainment</h4>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab10">
+						<a href="search/Financial_Services">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-money"></i></div>
+									<h4 class="clrchg">Financial Services</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="search/Hair_Beauty">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
+									<h4 class="clrchg">Hair & Beauty</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="search/Medical">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-medkit"></i></div>
+									<h4 class="clrchg">Medical</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="search/Services">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-shield"></i></div>
@@ -109,17 +80,37 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab11">
+						<a href="search/Restaurant">
 							<div class="focus-border">
 								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-at"></i></div>
-									<h4 class="clrchg">Jobs</h4>
+									<div class="focus-image"><i class="fa fa-cutlery"></i></div>
+									<h4 class="clrchg">Restaurants</h4>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab12">
+						<a href="search/Retail_Shopping">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-shopping-cart"></i></div>
+									<h4 class="clrchg">Retail Shopping</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="search/Sports_Recreation">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-futbol-o"></i></div>
+									<h4 class="clrchg">Sports Recreation</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+                    	<div class="col-md-2 focus-grid">
+						<a href="search/Real_Estate">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-home"></i></div>
@@ -128,9 +119,20 @@
 							</div>
 						</a>
 					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="search/Other">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-gg-circle"></i></div>
+									<h4 class="clrchg">Others</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+
 					<div class="clearfix"></div>
 				</div>
 			</div>
-___________________________
+
 
 {% endblock %}
