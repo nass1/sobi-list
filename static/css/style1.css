@@ -112,8 +112,11 @@ border:1px solid #e7eaed;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+.focus-image i.fa-laptop {
+    background: #ff9e29;
+}
 .focus-image i.fa-car {
-	background:#d40b4f;
+	background:#dd0908;
 }
 .focus-image i.fa-book {
 	background:#d40b4f;
@@ -124,17 +127,18 @@ border:1px solid #e7eaed;
 .focus-image i.fa-wheelchair {
 	background:#7e3b07;
 }
-.focus-image i.fa-paw {
+.focus-image i.fa-medkit {
 	background:#1963ce;
 }
 .focus-image i.fa-book {
 	background:#c119ce;
 }
+
 .focus-image i.fa-asterisk {
-	background:#FFEB3B;
+	background:#7e3b07;
 }
 .focus-image i.fa-gamepad {
-	background:#1ca39d;
+	background:#3fb7d2;
 }
 .focus-image i.fa-shield {
 	background:#f49ecf;
@@ -163,9 +167,9 @@ i.furniture {
 }
 .focus-layout:hover div.focus-image i.furniture{
 }
-i.pets {
+i.medical {
 }
-.focus-layout:hover div.focus-image i.pets{
+.focus-layout:hover div.focus-image i.medical{
 }
 i.books {
 }

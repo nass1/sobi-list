@@ -1,9 +1,35 @@
 {% extends "base1.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
+
 
 {% block body_block %}
+
+
 <link href="{% static 'css/listting.css' %}" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<select size="1" name="links" onchange="window.location.href=this.value;">
+    <option value="/bizlist/">Select</option>
+    <option value="/bizlist/">All</option>
+    <option value="/search/Automotive">Automotive</option>
+    <option value="/search/Education_Learning">Education & Learning</option>
+    <option value="/search/Entertainment">Entertainment</option>
+    <option value="/search/Financial_Services">Financial Services</option>
+    <option value="/search/Hair_Beauty">Hair Beauty</option>
+    <option value="/search/Medical">Medical</option>
+    <option value="/search/Services">Services</option>
+    <option value="/search/Restaurants">Restaurants</option>
+    <option value="/search/Retail_Shopping">Retail Shopping</option>
+    <option value="/search/Sports_Recreation">Sports Recreation</option>
+    <option value="/search/Real_Estate">Real Estate</option>
+    <option value="/search/Other">Others</option>
+</select>
+<br>
+<br>
+
+
 
 <div class="container">
     <div class="row">
