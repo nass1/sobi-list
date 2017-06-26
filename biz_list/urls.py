@@ -15,7 +15,8 @@ urlpatterns = [
     url(r'^bizlist/(?P<pk>\d*)/$', views.BizDetailView.as_view(),name="detail"),
     #url(r'^search/([\w-]+)/$',views.SearchList.as_view(), name="search"),
     url(r'^search/([\w-]+)/$',views.get_name, name="search"),
-    url(r'^filter/([\w-]+)/$',views.get_name, name="filter"),
+    #url(r'^filter/([\w-]*)/$',views.AboutListViewCountry.as_view, name="filter"),
+    url(r'^search1/$', views.search, name='search1'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

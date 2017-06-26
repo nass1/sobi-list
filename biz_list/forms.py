@@ -20,7 +20,10 @@ class NameForm(forms.Form):
 class CatoForm(ModelForm):
     class Meta:
         model = About
-        fields = ['category']
+        fields = ['country']
+
+
+
 
 
 class CustomerListFormHelper(FormHelper):

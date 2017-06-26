@@ -5,12 +5,18 @@
 
 {% block body_block %}
 
+<!----Next is advance list (new template called whatever.html) and quick filter (key is for loops)--->
+
+
 
 <link href="{% static 'css/listting.css' %}" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<select size="1" name="links" onchange="window.location.href=this.value;">
+<br>
+
+<label for="category">Sort by category</label>
+<select size="1" name="links" onchange="window.location.href=this.value;" id="category">
     <option value="/bizlist/">Select</option>
     <option value="/bizlist/">All</option>
     <option value="/search/Automotive">Automotive</option>
@@ -26,6 +32,7 @@
     <option value="/search/Real_Estate">Real Estate</option>
     <option value="/search/Other">Others</option>
 </select>
+
 <br>
 <br>
 

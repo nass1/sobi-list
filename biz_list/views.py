@@ -53,18 +53,26 @@ class SearchList(SingleObjectMixin, ListView):
 
 
 
+def search(request):
+    user_list = About.objects.all()
+    user_filter = UserFilter(request.GET, queryset=user_list)
+    return render(request, 'biz_list/about_list.html', {'filter': user_filter})
 
-
+#https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html
 
 ######################### to be continued #############################
 
 #######################################
 
-class AboutListView(ListView):
+class AboutListView(FormMixin, ListView):
     context_object_name = "biznames"
     model = About #about_list.html
     form_class = CatoForm
     paginate_by = 10
+
+
+
+
 
 
 

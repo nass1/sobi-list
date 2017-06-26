@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_countries',
     'bootstrap3',
     'django_tables2',
+    'django_filters',
 
 ]
 

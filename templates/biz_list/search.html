@@ -1,26 +1,9 @@
-
-
-<html>
-<body>
-
-<form action="/search/" method="get">
-    <label for="your_name">Your name: </label>
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-    <input type="submit" value="OK">
-</form>
-
-<p><strong>Note:</strong>URL of this page: {{ request.get_full_path }}</p>
-
-{% for i in biznames%}
-<h1>
-    {{i.name}}
-    {{i.category}} <br>
-    {{i.city}}
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++
-    </h1>
-
-{% endfor %}
-
-
-</body>
-</html>
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for user in filter.qs %}
+    <li>{{ user.country }} - {{ user.city }}</li>
+  {% endfor %}
+  </ul>
