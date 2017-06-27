@@ -40,6 +40,7 @@ class About(models.Model):
     twitter = models.URLField(max_length=200, blank=True)
     youtube = models.URLField(max_length=200, blank=True)
     google_plus = models.URLField(max_length=200, blank=True)
+    published = models.BooleanField()
 
     #profile_pic = models.ImageField(upload_to='images', blank=True, default="/mnt/project/media/images/barcelona.jpg")
     #https://pypi.python.org/pypi/django-countries

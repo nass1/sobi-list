@@ -1,5 +1,5 @@
 from .filters import UserFilter
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 #=====================================
 from django.template.defaulttags import register
 from django.shortcuts import render, redirect, get_object_or_404
@@ -26,7 +26,7 @@ class IndexView(TemplateView):
 class AboutCreate(CreateView):
     model = About
     success_url = '/'
-    fields = '__all__'
+    form_class = AboutForm
 
 
 def get_name(request,nameid):
@@ -55,22 +55,34 @@ class SearchList(SingleObjectMixin, ListView):
 
 def search(request):
     user_list = About.objects.all()
+    user_filter = UserFilter(request.GET, queryset=user_list).qs
+    page = request.GET.get('page', 1)
+    paginator = Paginator(user_filter, 4)
+
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        contacts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        contacts = paginator.page(paginator.num_pages)
     user_filter = UserFilter(request.GET, queryset=user_list)
-    return render(request, 'biz_list/about_list.html', {'filter': user_filter})
+    return render(request, 'biz_list/about_list.html', {'filter': user_filter, 'contacts': contacts})
 
 #https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html
 
 ######################### to be continued #############################
 
 #######################################
-
+"""
 class AboutListView(FormMixin, ListView):
     context_object_name = "biznames"
     model = About #about_list.html
     form_class = CatoForm
     paginate_by = 10
 
-
+"""
 
 
 

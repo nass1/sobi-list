@@ -1,7 +1,7 @@
 {% extends "base1.html" %}
 {% load staticfiles %}
 {% load bootstrap3 %}
-
+{% load widget_tweaks %}
 
 {% block body_block %}
 
@@ -15,23 +15,33 @@
 
 <br>
 
-<label for="category">Sort by category</label>
-<select size="1" name="links" onchange="window.location.href=this.value;" id="category">
-    <option value="/bizlist/">Select</option>
-    <option value="/bizlist/">All</option>
-    <option value="/search/Automotive">Automotive</option>
-    <option value="/search/Education_Learning">Education & Learning</option>
-    <option value="/search/Entertainment">Entertainment</option>
-    <option value="/search/Financial_Services">Financial Services</option>
-    <option value="/search/Hair_Beauty">Hair Beauty</option>
-    <option value="/search/Medical">Medical</option>
-    <option value="/search/Services">Services</option>
-    <option value="/search/Restaurants">Restaurants</option>
-    <option value="/search/Retail_Shopping">Retail Shopping</option>
-    <option value="/search/Sports_Recreation">Sports Recreation</option>
-    <option value="/search/Real_Estate">Real Estate</option>
-    <option value="/search/Other">Others</option>
-</select>
+<form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Search Sobi List</h4>
+      <div class="row">
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.name.label_tag }}
+          {% render_field filter.form.name class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.country.label_tag }}
+          {% render_field filter.form.country class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.city.label_tag }}
+          {% render_field filter.form.city class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.category.label_tag }}
+          {% render_field filter.form.category class="form-control" %}
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+    </div>
+  </form>
 
 <br>
 <br>
@@ -41,7 +51,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            {% for i in biznames%}
+            {% for i in contacts%}
             <div class="well well-sm">
                 <div class="row">
 
@@ -86,6 +96,26 @@
     </div>
 </div>
 
-
+{% if contacts.has_other_pages %}
+  <ul class="pagination">
+    {% if contacts.has_previous %}
+      <li><a href="?page={{ contacts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in contacts.paginator.page_range %}
+      {% if contacts.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if contacts.has_next %}
+      <li><a href="?page={{ contacts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
 
 {% endblock %}

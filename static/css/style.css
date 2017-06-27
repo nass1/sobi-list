@@ -33,7 +33,7 @@ body a:hover{
 }
 /*-- banner--*/
 .banner {
-	background:url(../images/a.jpg)no-repeat center;
+	background:url(../images/aaaa.jpg)no-repeat center;
 	-webkit-background-size:cover;
 	background-size:cover;
 	-moz-background-size:cover;
@@ -464,7 +464,7 @@ ul.social-icons, .banner-top-right p {
 /*-- //top-nav --*/
 /*-- welcome --*/
 .welcome,.latest,.about,.team,.services,.w3services-bottom,.features,.gallery,.codes,.contact,.single-page{
-	padding:6em 0;
+	padding:1em 0;
 }
 .title {
     margin-bottom: 5em;

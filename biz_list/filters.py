@@ -5,4 +5,4 @@ from .models import About
 class UserFilter(django_filters.FilterSet):
     class Meta:
         model = About
-        fields = ['name', 'country', 'category', ]
+        fields = ['name', 'country', 'city', 'category', ]

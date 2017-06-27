@@ -6,12 +6,13 @@ from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit
 from crispy_forms.bootstrap import InlineField, StrictButton, FormActions
 
 class AboutForm(ModelForm):
-    model = About
-    fields = '__all__'
-    widgets = {
-            'description': Textarea(attrs={'cols': 80, 'rows': 20}),
-            'brief_description': Textarea(attrs={'cols': 50, 'rows': 5}),
-    }
+    class Meta:
+        model = About
+        exclude = ['published',]
+        widgets = {
+                'description': Textarea(attrs={'cols': 80, 'rows': 20}),
+                'brief_description': Textarea(attrs={'cols': 50, 'rows': 5}),
+        }
 
 class NameForm(forms.Form):
     your_name = forms.CharField(label='Your name', max_length=100)
