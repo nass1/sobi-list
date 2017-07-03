@@ -8,7 +8,7 @@ from crispy_forms.bootstrap import InlineField, StrictButton, FormActions
 class AboutForm(ModelForm):
     class Meta:
         model = About
-        exclude = ['published',]
+        exclude = ['approved_published',]
         widgets = {
                 'description': Textarea(attrs={'cols': 80, 'rows': 20}),
                 'brief_description': Textarea(attrs={'cols': 50, 'rows': 5}),

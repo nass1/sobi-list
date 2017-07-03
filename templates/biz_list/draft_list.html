@@ -1,0 +1,13 @@
+<h1>
+    Draft
+</h1>
+<br>
+    {% for post in posts %}
+        <div class="post">
+           <h1><p class="date">created: {{ post.name }}</p> </h1>
+            <h3><a href="{% url 'bizweb:ddrafts' pk=post.pk %}">{{ post.country }}</a></h3>
+            <p>{{ post.city }}</p> <br>
+            <p>{{ post.approved_published }}</p>
+            <h1>_______________________________________________________________________________________________</h1>
+        </div>
+    {% endfor %}

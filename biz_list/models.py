@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+from django.core.urlresolvers import reverse
 
 class About(models.Model):
 
@@ -40,13 +41,21 @@ class About(models.Model):
     twitter = models.URLField(max_length=200, blank=True)
     youtube = models.URLField(max_length=200, blank=True)
     google_plus = models.URLField(max_length=200, blank=True)
-    published = models.BooleanField()
+    approved_published = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_published = True
+        self.save()
+
+    def get_absolute_url(self):
+        return reverse("/drafts/",kwargs={'pk':self.pk})
+
 
     #profile_pic = models.ImageField(upload_to='images', blank=True, default="/mnt/project/media/images/barcelona.jpg")
     #https://pypi.python.org/pypi/django-countries
 
     def __str__(self):              # __unicode__ on Python 2
-        return self.name
+        return " %s ==> %s " % (self.name, self.approved_published)
 
 
 

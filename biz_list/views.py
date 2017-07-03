@@ -10,10 +10,10 @@ from django.views.generic import (View,TemplateView,
                                 ListView,DetailView,
                                 CreateView,DeleteView,
                                 UpdateView)
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormMixin
 from django.http import HttpRequest, HttpResponseRedirect, HttpResponse
-
+from django.contrib.auth.decorators import login_required
 class IndexView(TemplateView):
     template_name = "index.html"
     def get_context_data(self, **kwargs):
@@ -22,6 +22,22 @@ class IndexView(TemplateView):
         return context
 
 
+class DraftListView(LoginRequiredMixin,ListView):
+    #login_url = '/login/'
+
+    context_object_name = "posts"
+    model = About
+    template_name = 'biz_list/draft_list.html'
+    redirect_field_name = 'biz_list/about_list.html'
+    def get_queryset(self):
+        return About.objects.filter(approved_published=False)
+
+
+@login_required
+def post_publish(request, pk):
+    post = get_object_or_404(About, pk=pk)
+    post.approve()
+    return redirect('/drafts/', pk=pk)
 
 class AboutCreate(CreateView):
     model = About
@@ -54,7 +70,7 @@ class SearchList(SingleObjectMixin, ListView):
 
 
 def search(request):
-    user_list = About.objects.all()
+    user_list = About.objects.filter(approved_published=True)
     user_filter = UserFilter(request.GET, queryset=user_list).qs
     page = request.GET.get('page', 1)
     paginator = Paginator(user_filter, 4)
@@ -84,7 +100,15 @@ class AboutListView(FormMixin, ListView):
 
 """
 
+class BizDetailViewDraft(DetailView):
+    context_object_name = 'biz_details'
+    # 'models' is used to connect to databse
+    model = About
+    # template_name is required to view the the pages. like below
+    template_name = 'biz_list/biz_detail_draft.html'
 
+    def get_queryset(self):
+        return About.objects.filter(approved_published=False)
 
 
 
@@ -94,3 +118,6 @@ class BizDetailView(DetailView):
     model = About
     # template_name is required to view the the pages. like below
     template_name = 'biz_list/biz_detail.html'
+
+    def get_queryset(self):
+        return About.objects.filter(approved_published=True)
