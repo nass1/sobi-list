@@ -8,12 +8,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% load staticfiles %}
 <html>
 <head>
-<title>Fascinating a Real Estates & Builders Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Welcome to Sobi List</title>
 <!-- mobile apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Fascinating Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="busines directory, sobi busines directory, mandaean busines directory, sobi business, " />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //mobile apps -->
 <!-- Custom Theme files -->
@@ -27,8 +26,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 <!-- //js -->
 <!-- web-fonts -->
-<link href='{% static "//fonts.googleapis.com/css?family=Buda:300" %}' rel='stylesheet' type='text/css'>
-<link href='{% static "//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic" %}' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- //web-fonts -->
 <!-- start-smooth-scrolling -->
@@ -136,7 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 							<li>
-								<a href="contact.html" onclick="$('#section-6').animatescroll();">
+								<a href="{% url 'bizweb:contact' %}" onclick="$('#section-6').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
 									</span>
@@ -193,7 +193,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="{% url 'bizweb:create' %}">Add To List</a></li>
 					<li><a href="gallery.html">Gallery</a></li>
 					<li><a href="codes.html">Short Codes</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="{% url 'bizweb:contact' %}">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="footer-w3lsrow">

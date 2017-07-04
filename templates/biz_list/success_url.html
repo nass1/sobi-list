@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        <br><br> <h2 style="color:#0fad00">Success</h2>
+        <img src="http://osmhotels.com//assets/check-true.jpg">
+        <h3>Dear Member</h3>
+        <p style="font-size:20px;color:#5C5C5C;">Thank you for submitting your business with Sobi List. your business will be reviewed with one of our team members, approval time takes between 2 and 4 working days</p>
+        <a href="{% url 'bizweb:mainpage' %}" class="btn btn-success">    Home    </a>
+    <br><br>
+        </div>
+
+	</div>
+</div>

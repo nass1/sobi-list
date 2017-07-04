@@ -41,19 +41,27 @@ def post_publish(request, pk):
 
 class AboutCreate(CreateView):
     model = About
-    success_url = '/'
+    success_url = '/success/'
     form_class = AboutForm
 
 
+
+class SuccessUrl(TemplateView):
+    template_name = 'biz_list/success_url.html'
+
+
+class BizContact(TemplateView):
+    template_name = 'biz_list/biz_contact.html'
+
+'''
 def get_name(request,nameid):
     # if this is a POST request we need to process the form data
     abc = request.path
     print ("the ree is ", abc)
     abc = About.objects.filter(category=nameid)
-
     return render(request, 'biz_list/about_list.html', {'biznames': abc})
 
-
+'''
 
 
 #######################################
