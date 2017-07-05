@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_tables2',
     'django_filters',
     'widget_tweaks',
+    'captcha',
 
 ]
 
@@ -61,7 +62,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'sobi_list.urls'
-
+SOUTH_MIGRATION_MODULES = {
+    'captcha': 'captcha.south_migrations',
+}
+CAPTCHA_FONT_SIZE = 50
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
