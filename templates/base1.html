@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="banner-top-grids banner-top-left">
 						<ul class="social-icons">
 							<li><a href="#"> </a></li>
-							<li><a href="#" class="fb"> </a></li>
+							<li><a href="https://www.facebook.com/groups/298525917224690/" class="fb" target="_blank"> </a></li>
 							<li><a href="#" class="in"> </a></li>
 							<li><a href="#" class="dott"> </a></li>
 						</ul>
@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
                          <li>
-								<a href="about.html" onclick="$('#section-2').animatescroll();">
+								<a href="#" onclick="$('#section-2').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
 									</span>
@@ -192,7 +192,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="{% url 'bizweb:bizlist' %}">Show List</a></li>
 					<li><a href="{% url 'bizweb:create' %}">Add To List</a></li>
 					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="codes.html">Short Codes</a></li>
+
 					<li><a href="{% url 'bizweb:contact' %}">Contact Us</a></li>
 				</ul>
 			</div>
@@ -201,12 +201,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Contact Us :</h3>
 					<ul>
 
-						<li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+						<li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com">Email will come soon</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 footer-grids subscribe">
 					<h3>Search :</h3>
-					<form action="#" method="post">
+					<form action="{% url 'bizweb:bizlist' %}" method="post">
+                        {% csrf_token %}
 						<input type="text" name="Email" placeholder="Search" required="">
 						<input type="submit" value="Search">
 					</form>
@@ -216,7 +217,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Follow Us :</h3>
 					<ul class="social-icons">
 						<li><a href="#"> </a></li>
-						<li><a href="#" class="fb"> </a></li>
+						<li><a href="https://www.facebook.com/groups/298525917224690/" class="fb" target="_blank"> </a></li>
 						<li><a href="#" class="in"> </a></li>
 						<li><a href="#" class="dott"> </a></li>
 					</ul>
